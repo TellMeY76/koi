@@ -1,0 +1,55 @@
+<div class="report-container">
+  <div class="report-content-list">
+    <div class="report-content" *ngFor="let content of contents;index as i" routerLink="/report/detail/{{i}}">
+      <p class="report-content-title">{{content.name}}</p>
+      <i class="material-icons report-content-icon">{{content.icon}}</i>
+      <p class="report-content-description">{{content.tip}}</p>
+    </div>
+  </div>
+  <div class="report-service-list">
+    <div class="report-service" routerLink="/report/plans">行动计划</div>
+    <div class="report-service" id="packageSelect"
+         (click)="clickPackageSelect('packageSelect')"
+         [ngClass]="openPackages?'open-packages':''">
+      <p (click)="openPackages=!openPackages">套餐选择<i class="open-packages-icon material-icons">navigate_next</i></p>
+      <div class="package-select">
+        <div class="package-item" *ngFor="let pkg of packageList;index as i"
+             [id]="'package_'+i"
+             [ngClass]="openServices['name'] === pkg['name']?'open-services':''">
+          <div (click)="selectPackage(pkg)">
+            <p>{{pkg['name']}}
+              <i class="open-services-icon material-icons">navigate_next</i>
+            </p>
+          </div>
+          <div class="service-view">
+            <div class="service-container">
+              <div class="service-range">
+                <h4>服务范围：</h4>
+                <div class="package-service-items">
+                  <p *ngFor="let range of pkg.ranges">{{range}}</p>
+                </div>
+              </div>
+              <div class="service-content">
+                <h4>服务内容：</h4>
+                <div class="package-service-items">
+                  <p *ngFor="let content of pkg.contents">{{content}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="package-worth">
+              <span class="package-price-label">服务价值：</span><span class="package-price">￥{{pkg['worth']}}</span>
+            </div>
+            <div class="package-buy">
+              <p><span class="package-price-label">套餐价：</span><span class="package-price">￥{{pkg['sell'] / 12}}/月</span>
+              </p>
+              <button class="buy-btn" (click)="buyPackage()">订购</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="report-consultant">
+    <a href="tel:18858252004">更多咨询，请咨询您的专属顾问:王茵</a>
+  </div>
+</div>

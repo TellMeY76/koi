@@ -1,0 +1,31 @@
+<div class="action-plan">
+  <ul class="action-plan-nav">
+    <li *ngFor="let schedule of scheduleList;index as i" [ngClass]="activeLi===schedule?'active-item':''"
+        (click)="activeLi=schedule">
+      <a (click)="scrollView('schedule_'+i)">{{schedule.title}}</a>
+    </li>
+  </ul>
+  <div class="action-plan-block" [id]="'schedule_'+i" *ngFor="let schedule of scheduleList;index as i">
+    <div class="action-plan-header">
+      <h3>{{schedule.title}}</h3>
+      <p>请按下列行动计划做好{{schedule.title}}</p>
+    </div>
+    <div class="action-plan-schedule">
+      <div class="action-plan-timeline timeline-container">
+        <div class="action-plan-timeline-block" *ngFor="let item of schedule.schedule">
+          <div class="action-plan-timeline-circle"></div>
+          <div class="action-plan-timeline-content">
+            <div class="timeline-content-row">
+              <p class="action-plan-item action-plan-item-left">{{item.content}}</p>
+              <p class="action-plan-item action-plan-item-right action-plan-executive">{{item.executive}}</p>
+            </div>
+            <div class="timeline-content-row">
+              <p class="action-plan-item-tip action-plan-item-left">{{item.tip}}</p>
+              <p class="action-plan-date action-plan-item-right">{{item.date}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
