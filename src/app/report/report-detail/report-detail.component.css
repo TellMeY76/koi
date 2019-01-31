@@ -76,6 +76,7 @@
 
 .report-detail-suggest {
   text-indent: 2em;
+  line-height: 1.8 !important;
 }
 
 .content-label {
