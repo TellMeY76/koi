@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {REPO_TABS} from '../../config/reportContents';
-import {RepoTab} from '../../model/report';
+import { Component, OnInit } from '@angular/core';
+import { REPO_TABS } from '../../config/reportContents';
+import { RepoTab } from '../../model/report';
 
 @Component({
   selector: 'app-report-single-page',
@@ -8,9 +8,10 @@ import {RepoTab} from '../../model/report';
   styleUrls: ['./report-single-page.component.css']
 })
 export class ReportSinglePageComponent implements OnInit {
-  contents = REPO_TABS;
-  activeLi: RepoTab = REPO_TABS[0];
-
+  contents: RepoTab[] = REPO_TABS;
+  index: number = 0;
+  swipeIndex: boolean;
+  activeLi: RepoTab = REPO_TABS[this.index];
   constructor() {
   }
 
@@ -18,11 +19,22 @@ export class ReportSinglePageComponent implements OnInit {
   }
 
   selectContent(content: RepoTab) {
-    this.activeLi = content;
+    this.index = content.index;
+    this.activeLi = REPO_TABS[this.index];
     this.scrollView('contentTop');
   }
 
   scrollView(divId: string) {
     document.getElementById(divId).scrollIntoView();
+  }
+
+  swipe(dir: string) {
+    if (dir === 'right' && this.index !== 0) {
+      this.index--;
+    } else if (dir === 'left' && this.index < 4) {
+      this.index++;
+    }
+    this.swipeIndex = true;
+    this.activeLi = REPO_TABS[this.index];
   }
 }

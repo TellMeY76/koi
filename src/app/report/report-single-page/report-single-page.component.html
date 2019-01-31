@@ -1,15 +1,12 @@
-<div class="report-single-page-container">
+<div class="report-single-page-container" (swipeleft)="swipe('left')" (swiperight)="swipe('right')">
   <ul class="single-page-nav">
-    <li *ngFor="let content of contents" [ngClass]="activeLi['name']===content['name']?'active-item':''"
-        (click)="selectContent(content)">
+    <li *ngFor="let content of contents" [ngClass]="activeLi['name']===content['name']?'active-item':''" (click)="selectContent(content)">
       <a>{{content.name}}</a>
     </li>
   </ul>
   <div id="contentTop"></div>
-  <div class="single-page-block" *ngIf="activeLi && activeLi['index'] < 4">
-    <app-report-detail [detailId]="activeLi.index"></app-report-detail>
-  </div>
-  <div class="single-page-block" *ngIf="activeLi && activeLi['index'] === 4">
-    <app-report-package-recommend></app-report-package-recommend>
+  <div class="single-page-block">
+    <app-report-detail [detailId]="activeLi.index" *ngIf="activeLi && activeLi['index'] < 4"></app-report-detail>
+    <app-report-package-recommend *ngIf="activeLi && activeLi['index'] === 4"></app-report-package-recommend>
   </div>
 </div>
