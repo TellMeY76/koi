@@ -4,6 +4,10 @@ export class RepoContentItem {
   tip: string;
 }
 
+export class RepoTab {
+  name: string;
+  index: number;
+}
 
 export class RepoDetail {
   name: string;

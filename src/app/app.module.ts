@@ -11,6 +11,8 @@ import {RouterModule} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { ReportCoverComponent } from './report/report-cover/report-cover.component';
+import { ReportSinglePageComponent } from './report/report-single-page/report-single-page.component';
+import { ReportPackageRecommendComponent } from './report/report-package-recommend/report-package-recommend.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ReportCoverComponent } from './report/report-cover/report-cover.compone
     ReportIndexComponent,
     ReportDetailComponent,
     ReportPlanComponent,
-    ReportCoverComponent
+    ReportCoverComponent,
+    ReportSinglePageComponent,
+    ReportPackageRecommendComponent
   ],
   imports: [
     HttpClientModule,

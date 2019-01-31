@@ -22,17 +22,13 @@
     </div>
     <div class="report-detail-card-content">
       <p class="report-detail-suggest">{{info.suggest}}</p>
-    </div>
-  </div>
-  <div class="report-detail-card">
-    <div class="report-detail-card-title">
-      我们建议：
-    </div>
-    <div class="report-detail-card-content">
-      <p class="content-label" *ngIf="info.weAdvice.label">{{info.weAdvice.label}}</p>
-      <ol class="content-list" [ngClass]="info.weAdvice.label?'content-with-label':''">
-        <li *ngFor="let advice of info.weAdvice.contents">{{advice}}</li>
-      </ol>
+      <p style="margin: 0">我们建议：</p>
+      <div class="report-detail-card-content">
+        <p class="content-label" *ngIf="info.weAdvice.label">{{info.weAdvice.label}}</p>
+        <ol class="content-list" [ngClass]="info.weAdvice.label?'content-with-label':''">
+          <li *ngFor="let advice of info.weAdvice.contents">{{advice}}</li>
+        </ol>
+      </div>
     </div>
   </div>
   <div class="report-detail-card">
@@ -48,7 +44,7 @@
               <p class="action-plan-item action-plan-item-left">{{scheduleItem.content}}</p>
               <p class="action-plan-item action-plan-item-right action-plan-executive">{{scheduleItem.executive}}</p>
             </div>
-            <div class="timeline-content-row">
+            <div class="timeline-content-row ">
               <p class="action-plan-item-tip action-plan-item-left">{{scheduleItem.tip}}</p>
               <p class="action-plan-date action-plan-item-right">{{scheduleItem.date}}</p>
             </div>

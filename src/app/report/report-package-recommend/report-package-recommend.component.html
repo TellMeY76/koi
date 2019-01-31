@@ -1,0 +1,78 @@
+<div class="report-detail-container">
+  <div class="report-detail-card">
+    <div class="report-detail-icon">
+      <i class="material-icons">assignment_turned_in</i>
+    </div>
+    <div class="report-detail-title">
+      <p class="report-recommend detail-title-name">服务方案</p>
+      <p class="detail-title-description"></p>
+    </div>
+  </div>
+  <div class="report-detail-card">
+    <div class="report-detail-card-title">
+      最优方案：
+    </div>
+    <div class="report-service report-detail-card-content">
+      <div class="service-view">
+        <div class="service-container">
+          <h3>{{bestPlan.name}}</h3>
+          <div class="service-range">
+            <h4>服务范围：</h4>
+            <div class="package-service-items">
+              <p *ngFor="let range of bestPlan.ranges">{{range}}</p>
+            </div>
+          </div>
+          <div class="service-content">
+            <h4>服务内容：</h4>
+            <div class="package-service-items">
+              <p *ngFor="let content of bestPlan.contents">{{content}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="package-worth">
+          <span class="package-price-label">服务价值：</span><span class="package-price">￥{{bestPlan['worth']}}</span>
+        </div>
+        <div class="package-worth">
+          <span class="package-price-label">套餐价：</span><span class="package-price">￥{{bestPlan['sell'] / 12}}
+          /月</span>
+          <button class="buy-btn" (click)="buyPackage()">订购</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="report-detail-card">
+    <div class="report-detail-card-title">
+      推荐方案：
+    </div>
+    <div class="report-service report-detail-card-content" *ngFor="let other of anotherPlans">
+      <div class="service-view">
+        <div class="service-container">
+          <h3>{{other.name}}</h3>
+          <div class="service-range">
+            <h4>服务范围：</h4>
+            <div class="package-service-items">
+              <p *ngFor="let range of other.ranges">{{range}}</p>
+            </div>
+          </div>
+          <div class="service-content">
+            <h4>服务内容：</h4>
+            <div class="package-service-items">
+              <p *ngFor="let content of other.contents">{{content}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="package-worth">
+          <span class="package-price-label">服务价值：</span><span class="package-price">￥{{other['worth']}}</span>
+        </div>
+        <div class="package-worth">
+          <span class="package-price-label">套餐价：</span><span class="package-price">￥{{other['sell'] / 12}}
+          /月</span>
+          <button class="buy-btn" (click)="buyPackage()">订购</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="report-consultant">
+    <a href="tel:18858252004">联系顾问</a>
+  </div>
+</div>

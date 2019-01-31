@@ -78,8 +78,14 @@
   text-indent: 2em;
 }
 
+.content-label {
+  margin-top: 0 !important;
+
+}
+
 .content-list {
   padding: 0 1em;
+  margin: 0 0 1em 0;
 }
 
 .content-with-label {
@@ -94,7 +100,7 @@
 
 
 .report-detail-card-content p {
-  margin: 1em 0;
+  margin: 1em 0 0 0;
 }
 
 .report-detail-action-plan {

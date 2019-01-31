@@ -1,0 +1,42 @@
+.report-single-page-container {
+  background: #fff;
+}
+
+.single-page-nav {
+  position: fixed;
+  top: -16px;
+  left: -40px;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3em;
+  font-size: 1em;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+.single-page-nav li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: #9b9b9b;
+  text-align: center;
+  font-size: .9em;
+  line-height: 3.5;
+}
+
+.single-page-nav .active-item {
+  color: #fff;
+  background: rgb(97, 146, 179);
+}
+
+.single-page-block {
+  padding-top: 4em;
+}

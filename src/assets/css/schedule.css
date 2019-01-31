@@ -33,7 +33,6 @@
 
 .action-plan-timeline-block {
   position: relative;
-  margin: 1em 0;
 }
 
 .action-plan-timeline :after {
@@ -44,7 +43,7 @@
 
 .action-plan-timeline-circle {
   position: absolute;
-  top: 25px;
+  top: 19px;
   left: 15px;
   width: 10px;
   height: 10px;
@@ -57,7 +56,7 @@
   position: relative;
   margin-left: 45px;
   background: white;
-  padding: .4em 0 1em 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #ebebeb;
@@ -86,6 +85,11 @@
   justify-content: space-between;
 }
 
+.timeline-content-row:nth-child(2) {
+  margin-bottom: 1em;
+}
+
+
 .action-plan-item {
   font-size: 14px;
   color: #303e49;
@@ -97,6 +101,7 @@
 
 .action-plan-item-right {
   width: 42%;
+  font-size: 12px !important;
   text-align: right;
 }
 
