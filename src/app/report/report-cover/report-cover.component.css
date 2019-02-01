@@ -12,7 +12,7 @@
   font-weight: 100;
   text-align: center;
   margin: 0;
-  font-family: Roboto;
+  font-family: Roboto, serif;
   animation: fadeIn 2s;
 }
 
@@ -37,6 +37,7 @@
 }
 
 .report-date {
+  margin-top: .5em;
   font-size: .8em;
   color: #c6c6c6;
 }

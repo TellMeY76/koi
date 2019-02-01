@@ -10,7 +10,7 @@
   </div>
   <div class="report-detail-card" style="padding-bottom: 1em;">
     <div class="report-detail-card-title">
-      您的现状：
+      {{info.statusLabel}}：
     </div>
     <div class="report-detail-card-content">
       <p *ngFor="let status of info.status">{{status}}</p>
@@ -22,13 +22,15 @@
     </div>
     <div class="report-detail-card-content">
       <p class="report-detail-suggest">{{info.suggest}}</p>
-      <p style="margin: .5em 0 0 0;">我们建议：</p>
-      <div class="report-detail-card-content">
-        <p class="content-label" *ngIf="info.weAdvice.label">{{info.weAdvice.label}}</p>
-        <ol class="content-list" [ngClass]="info.weAdvice.label?'content-with-label':''">
-          <li *ngFor="let advice of info.weAdvice.contents">{{advice}}</li>
-        </ol>
-      </div>
+      <p class="content-label" *ngIf="info.weAdvice.label">{{info.weAdvice.label}}</p>
+      <ol class="content-list" *ngIf="info.weAdvice.contents" [ngClass]="info.weAdvice.label?'content-with-label':''">
+        <li *ngFor="let advice of info.weAdvice.contents">{{advice}}</li>
+      </ol>
+      <ol class="content-list" *ngIf="info.weAdvice.wordValues" [ngClass]="info.weAdvice.label?'content-with-label':''">
+        <li *ngFor="let wv of info.weAdvice.wordValues">{{wv.word}}
+          <span class="content-list-li-right">{{wv.value}}</span>
+        </li>
+      </ol>
     </div>
   </div>
   <div class="report-detail-card">
@@ -45,7 +47,8 @@
               <p class="action-plan-item action-plan-item-right action-plan-executive">{{scheduleItem.executive}}</p>
             </div>
             <div class="timeline-content-row ">
-              <p class="action-plan-item-tip action-plan-item-left">{{scheduleItem.tip}}</p>
+              <p class="action-plan-item-left"
+                 [ngClass]="scheduleItem.import ? 'tipImport':'action-plan-item-tip'">{{scheduleItem.tip}}</p>
               <p class="action-plan-date action-plan-item-right">{{scheduleItem.date}}</p>
             </div>
           </div>

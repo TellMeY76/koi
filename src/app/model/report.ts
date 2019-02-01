@@ -15,12 +15,19 @@ export class RepoDetail {
   description: string;
   status: string[];
   suggest: string;
+  statusLabel: string;
   weAdvice: WeAdvice;
+}
+
+export class WordValues {
+  word: string;
+  value: string;
 }
 
 export class WeAdvice {
   label: string;
-  contents: string[];
+  contents?: string[];
+  wordValues?: WordValues[];
 }
 
 export class RepoSchedule {
@@ -33,6 +40,7 @@ export class ScheduleItem {
   date: string;
   tip: string;
   executive: string;
+  import?: boolean;
 }
 
 export class Package {

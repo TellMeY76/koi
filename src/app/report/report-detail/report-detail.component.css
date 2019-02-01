@@ -81,11 +81,11 @@
 
 .content-label {
   margin-top: 0 !important;
-
+  margin-left: 1em !important;
 }
 
 .content-list {
-  padding: 0 1em;
+  padding-left: 2em;
   margin: 0 0 1em 0;
 }
 
@@ -96,7 +96,7 @@
 .report-detail-card-content p, li {
   font-size: 14px;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 
@@ -106,4 +106,21 @@
 
 .report-detail-action-plan {
   padding: 0;
+}
+
+.tipImport {
+  color: #f44336 !important;
+}
+
+.content-list-li-right {
+  float: right;
+  color: #f5a623 !important;
+}
+
+.content-list-li-right:after {
+  content: ')';
+}
+
+.content-list-li-right:before {
+  content: '(';
 }

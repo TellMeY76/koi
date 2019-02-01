@@ -14,6 +14,8 @@ import {ReportCoverComponent} from './report/report-cover/report-cover.component
 import {ReportSinglePageComponent} from './report/report-single-page/report-single-page.component';
 import {ReportPackageRecommendComponent} from './report/report-package-recommend/report-package-recommend.component';
 import * as Hammer from 'hammerjs';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
@@ -40,6 +42,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [{provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig}],
   bootstrap: [AppComponent]
