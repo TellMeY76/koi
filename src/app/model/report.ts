@@ -40,5 +40,5 @@ export class Package {
   contents: string[];
   ranges: string[];
   worth: string;
-  sell: string;
+  sell: number;
 }

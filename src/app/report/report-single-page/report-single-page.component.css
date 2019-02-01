@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 3em;
+  height: 2.5em;
   font-size: 1em;
   border-bottom: 1px solid #eee;
   background: #fff;
@@ -29,7 +29,7 @@ ul {
   color: #9b9b9b;
   text-align: center;
   font-size: .9em;
-  line-height: 3.5;
+  line-height: 2.8;
 }
 
 .single-page-nav .active-item {
@@ -38,18 +38,33 @@ ul {
 }
 
 .single-page-block {
-  padding-top: 4em;
+  padding-top: 3.5em;
+  transition: all .3s;
 }
 
-.inSwipe{
-  animation: fadeIn 1s;
+.inSwipe {
+  animation: fadeIn .6s;
+}
+
+.inSwipe2 {
+  animation: fadeIn2 .6s;
 }
 
 @keyframes fadeIn {
-0%{
-  opacity: 0;
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-100%{
-  opacity: 1;
-}
+
+
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -9,7 +9,7 @@ import {ReportPackageRecommendComponent} from './report-package-recommend/report
 
 export const REPORT_ROUTES: Routes = [
   {path: '', component: ReportCoverComponent},
-  {path: 'index', component: ReportIndexComponent},
+  // {path: 'index', component: ReportIndexComponent},
   {path: 'singlePage', component: ReportSinglePageComponent},
   {path: 'recommend', component: ReportPackageRecommendComponent},
   {path: 'report', component: ReportComponent},
