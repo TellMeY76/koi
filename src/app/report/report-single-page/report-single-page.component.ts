@@ -11,6 +11,7 @@ export class ReportSinglePageComponent implements OnInit {
   contents: RepoTab[] = REPO_TABS;
   index = 0;
   swipeIndex: boolean;
+  swipeDir: string;
   activeLi: RepoTab = REPO_TABS[this.index];
 
   constructor() {
@@ -32,8 +33,10 @@ export class ReportSinglePageComponent implements OnInit {
   swipe(dir: string) {
     if (dir === 'right' && this.index !== 0) {
       this.index--;
+      this.swipeDir = dir;
     } else if (dir === 'left' && this.index < 4) {
       this.index++;
+      this.swipeDir = dir;
     }
     this.swipeIndex = true;
     this.activeLi = REPO_TABS[this.index];

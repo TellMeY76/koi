@@ -6,8 +6,18 @@
     </li>
   </ul>
   <div id="contentTop"></div>
-  <div class="single-page-block" id="swipeDiv">
-    <app-report-detail [detailId]="activeLi.index" *ngIf="activeLi && activeLi['index'] < 4"></app-report-detail>
-    <app-report-package-recommend *ngIf="activeLi && activeLi['index'] === 4"></app-report-package-recommend>
+  <!--<div class="single-page-block" id="swipeDiv">-->
+  <!--<app-report-detail [detailId]="activeLi.index" *ngIf="activeLi && activeLi['index'] < 4"></app-report-detail>-->
+  <!--<app-report-package-recommend *ngIf="activeLi && activeLi['index'] === 4"></app-report-package-recommend>-->
+  <!--</div>-->
+  <div class="content-page-group">
+    <div class="content-page-block"
+         *ngFor="let content of contents;"
+         [ngClass]="activeLi['index'] === content['index']?'active-content':''">
+      <div class="content-swipe-page">
+        <app-report-detail [detailId]="content['index']" *ngIf="content.index < 4"></app-report-detail>
+        <app-report-package-recommend *ngIf="content['index'] === 4"></app-report-package-recommend>
+      </div>
+    </div>
   </div>
 </div>
